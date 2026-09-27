@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fashion Flow Selection And Men's Wear</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f2ed;
+            color: #222;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            height: 75px;
+            background: #151515;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        .nav-btn {
+            background: #d4af37;
+            color: #111;
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 650px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.68),
+                    rgba(0,0,0,0.55)
+                ),
+                url("https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 8%;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content small {
+            color: #d4af37;
+            font-size: 16px;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .hero-content h1 span {
+            color: #d4af37;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-gold {
+            background: #d4af37;
+            color: #111;
+        }
+
+        .btn-gold:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: black;
+        }
+
+
+        /* ================= COMMON ================= */
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #b18b20;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+
+            box-shadow: 0 7px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #a77d0a;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #171717;
+            color: white;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .about-content small {
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        .about-content h2 {
+            font-size: 40px;
+            margin: 15px 0 20px;
+        }
+
+        .about-content p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .features {
+            margin-top: 25px;
+        }
+
+        .features div {
+            margin: 12px 0;
+            color: #eee;
+        }
+
+        .features span {
+            color: #d4af37;
+            margin-right: 8px;
+        }
+
+
+        /* ================= FABRIC SECTION ================= */
+
+        .fabric-section {
+            background: #ebe5da;
+        }
+
+        .fabric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .fabric-card {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fabric-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .fabric-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .fabric-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            padding: 25px;
+
+            color: white;
+
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.85)
+            );
+        }
+
+        .fabric-name h3 {
+            font-size: 23px;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+
+            box-shadow: 0 7px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-box h3 {
+            margin-bottom: 25px;
+            font-size: 25px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #a77d0a;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 5px;
+
+            outline: none;
+        }
+
+        form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        form button {
+            border: none;
+            cursor: pointer;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 50px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #d4af37;
+        }
+
+        footer p {
+            color: #aaa;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        footer h3 {
+            margin-bottom: 18px;
+            color: #d4af37;
+        }
+
+        footer a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            margin-top: 35px;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* ================= WHATSAPP ================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+
+            width: 60px;
+            height: 60px;
+
+            background: #25d366;
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+
+            text-decoration: none;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+
+            z-index: 999;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .services,
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .fabric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media(max-width:600px) {
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 200px;
+            }
+
+            .services,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        Fashion Flow <span>Selection</span>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#services">Services</a>
+        </li>
+
+        <li>
+            <a href="#collection">Collection</a>
+        </li>
+
+        <li>
+            <a href="#fabrics">Fabrics</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+    <a class="nav-btn" href="#contact">
+        Visit Us
+    </a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <small>WELCOME TO</small>
+
+        <h1>
+            Fashion Flow
+            <span>Selection</span>
+        </h1>
+
+        <p>
+            Premium Men's Wear & Quality Cloth Material.
+            Get perfectly stitched clothes with modern
+            designs and premium fabrics.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#collection" class="btn btn-gold">
+                Explore Collection
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section" id="services">
+
+    <div class="section-title">
+
+        <small>WHAT WE OFFER</small>
+
+        <h2>Our Services</h2>
+
+        <p>
+            Everything you need for your perfect men's outfit.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                ✂️
+            </div>
+
+            <h3>Custom Stitching</h3>
+
+            <p>
+                Get your clothes professionally stitched
+                according to your size, style and preference.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                👔
+            </div>
+
+            <h3>Men's Wear</h3>
+
+            <p>
+                Stylish shirts, trousers, suits, traditional
+                wear and other men's fashion collections.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🧵
+            </div>
+
+            <h3>Cloth Materials</h3>
+
+            <p>
+                Choose from our collection of premium quality
+                fabrics for your next outfit.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COLLECTION ================= -->
+
+<section class="section" id="collection">
+
+    <div class="section-title">
+
+        <small>OUR COLLECTION</small>
+
+        <h2>Men's Fashion</h2>
+
+        <p>
+            Quality clothing for every occasion.
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=85"
+                alt="Men's Shirt"
+            >
+
+            <div class="product-info">
+
+                <h3>Premium Shirts</h3>
+
+                <p>
+                    Formal & Casual Shirts
+                </p>
+
+                <div class="price">
+                    Starting ₹799
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=800&q=85"
+                alt="Men's Suit"
+            >
+
+            <div class="product-info">
+
+                <h3>Suit & Blazer</h3>
+
+                <p>
+                    Premium Formal Collection
+                </p>
+
+                <div class="price">
+                    Starting ₹2,999
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=800&q=85"
+                alt="Men's Kurta"
+            >
+
+            <div class="product-info">
+
+                <h3>Traditional Wear</h3>
+
+                <p>
+                    Kurta & Festive Collection
+                </p>
+
+                <div class="price">
+                    Starting ₹999
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=800&q=85"
+                alt="Men's Trousers"
+            >
+
+            <div class="product-info">
+
+                <h3>Trousers</h3>
+
+                <p>
+                    Formal & Casual Trousers
+                </p>
+
+                <div class="price">
+                    Starting ₹899
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FABRICS ================= -->
+
+<section class="section fabric-section" id="fabrics">
+
+    <div class="section-title">
+
+        <small>PREMIUM MATERIAL</small>
+
+        <h2>Choose Your Fabric</h2>
+
+        <p>
+            Select the perfect material for your custom outfit.
+        </p>
+
+    </div>
+
+
+    <div class="fabric-grid">
+
+
+        <div class="fabric-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=85"
+            >
+
+            <div class="fabric-name">
+                <h3>Premium Cotton</h3>
+                <p>Comfortable & breathable</p>
+            </div>
+
+        </div>
+
+
+        <div class="fabric-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85"
+            >
+
+            <div class="fabric-name">
+                <h3>Premium Suit Fabric</h3>
+                <p>Perfect for formal wear</p>
+            </div>
+
+        </div>
+
+
+        <div class="fabric-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
+            >
+
+            <div class="fabric-name">
+                <h3>Designer Material</h3>
+                <p>Modern & stylish collection</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+    <img
+        src="https://images.unsplash.com/photo-1556760544-74068565f05c?auto=format&fit=crop&w=1000&q=85"
+        alt="Fashion Store"
+    >
+
+
+    <div class="about-content">
+
+        <small>ABOUT OUR BUSINESS</small>
+
+        <h2>
+            Style Made
+            Personally For You.
+        </h2>
+
+        <p>
+            <strong>Fashion Flow Selection And Men's Wear</strong>
+            is focused on men's clothing, custom stitching
+            and quality cloth materials.
+        </p>
+
+        <p>
+            Whether you need a formal outfit, casual shirt,
+            traditional wear or premium fabric material,
+            we help you create a style that fits you perfectly.
+        </p>
+
+
+        <div class="features">
+
+            <div>
+                <span>✓</span>
+                Quality Cloth Material
+            </div>
+
+            <div>
+                <span>✓</span>
+                Professional Stitching
+            </div>
+
+            <div>
+                <span>✓</span>
+                Modern Men's Fashion
+            </div>
+
+            <div>
+                <span>✓</span>
+                Custom Size & Design
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+    <div class="section-title">
+
+        <small>GET IN TOUCH</small>
+
+        <h2>Visit Fashion Flow</h2>
+
+        <p>
+            Contact us for stitching, fabric and men's wear.
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+
+        <div class="contact-box">
+
+            <h3>Contact Information</h3>
+
+
+            <div class="contact-item">
+
+                <strong>📍 Address</strong>
+
+                Panchayat Chowk,Near Indira Circle,University Main Road,<br>
+                Rajkot, Gujarat
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>📞 Phone</strong>
+
+                +91 9274092240
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>🕐 Opening Hours</strong>
+
+                Monday - Saturday<br>
+                9:00 AM - 10:00 PM
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>✂️ Services</strong>
+
+                Stitching • Men's Wear • Cloth Material
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>Send Enquiry</h3>
+
+
+            <form action="https://formspree.io/f/xoevkzbp" method="POST">
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Your Phone Number"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="service"
+                    name="service"
+                    placeholder="What do you need?"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+                <button class="btn btn-gold">
+                    Send Enquiry
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="footer-logo">
+                Fashion Flow <span>Selection</span>
+            </div>
+
+            <p>
+                Men's Wear • Custom Stitching •
+                Premium Cloth Materials
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>QUICK LINKS</h3>
+
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#collection">Collection</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>SERVICES</h3>
+
+            <a href="#services">Custom Stitching</a>
+            <a href="#collection">Men's Wear</a>
+            <a href="#fabrics">Cloth Material</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>FOLLOW US</h3>
+
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">WhatsApp</a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Fashion Flow Selection And Men's Wear.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- ================= WHATSAPP BUTTON ================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919274092240"
+    target="_blank"
+>
+    💬
+</a>
+
+
+
+
+
+</body>
+</html>
