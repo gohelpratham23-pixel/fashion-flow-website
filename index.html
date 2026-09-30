@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif, bold;
         }
 
         html {
@@ -590,7 +590,99 @@
             }
         }
 
-    </style>
+    
+/* ===== PREMIUM UPGRADE ===== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+body{font-family:'DM Sans',Arial,sans-serif;background:#f3efe8;}
+.hero-content h1,.section-title h2,.about-content h2{font-family:'Playfair Display',serif;}
+.hero{min-height:720px;background-position:center 35%;}
+.hero:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 40%,rgba(212,175,55,.16),transparent 35%);pointer-events:none;}
+.hero{position:relative;}
+.hero-content{position:relative;z-index:2;}
+nav{backdrop-filter:blur(12px);background:rgba(15,15,15,.94);}
+.logo{font-family:'Playfair Display',serif;}
+.btn{box-shadow:0 8px 22px rgba(0,0,0,.12);}
+.product-card,.service-card,.contact-box{border:1px solid rgba(180,150,80,.14);}
+.product-card img{transition:transform .6s ease;}.product-card:hover img{transform:scale(1.05);}
+.section-title h2{letter-spacing:.2px;}
+
+
+/* ===== PREMIUM LUXURY OVERRIDE ===== */
+:root{
+ --lux-black:#080808; --lux-charcoal:#121212; --lux-gold:#c9a227; --lux-gold2:#f0d77b;
+ --lux-cream:#f6f1e7; --lux-muted:#a7a7a7;
+}
+body{background:#0a0a0a;color:#eee;font-family:Georgia,"Times New Roman",serif;}
+nav{
+ background:rgba(8,8,8,.82)!important;backdrop-filter:blur(18px);
+ border-bottom:1px solid rgba(201,162,39,.28)!important;
+ box-shadow:0 10px 40px rgba(0,0,0,.35)!important;
+}
+.logo{letter-spacing:1px;text-transform:uppercase}
+.logo span{color:var(--lux-gold2)!important}
+nav ul a{color:#eee!important;position:relative}
+nav ul a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;background:var(--lux-gold2);transition:.3s}
+nav ul a:hover:after{width:100%}
+.nav-btn,.btn-gold{
+ background:linear-gradient(135deg,#a77b14,#e8cf68,#a77b14)!important;
+ color:#090909!important;border:0!important;
+ box-shadow:0 8px 28px rgba(201,162,39,.22)!important;
+ font-weight:700;letter-spacing:.4px
+}
+.hero{
+ min-height:720px!important;
+ background:
+ linear-gradient(90deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.70) 43%,rgba(5,5,5,.25) 100%),
+ url("https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=2200&q=90") center/cover!important;
+ position:relative;isolation:isolate;
+}
+.hero:after{content:"";position:absolute;inset:0;border:1px solid rgba(201,162,39,.18);margin:18px;pointer-events:none}
+.hero-content{max-width:850px!important}
+.hero-content small,.section-title small{color:var(--lux-gold2)!important;letter-spacing:4px;font-weight:700}
+.hero-content h1{font-size:clamp(54px,7vw,96px)!important;line-height:.95!important;letter-spacing:-2px;text-shadow:0 10px 35px #000}
+.hero-content h1 span{color:var(--lux-gold2)!important}
+.hero-content p{color:#ddd!important;font-size:18px;max-width:650px}
+.btn{border-radius:2px!important;text-transform:uppercase;letter-spacing:1.5px;transition:.3s!important}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.section{background:linear-gradient(180deg,#0b0b0b,#121212)!important;color:#eee!important}
+.section-title h2{font-size:44px!important;letter-spacing:-1px}
+.section-title p{color:#aaa!important}
+.services,.products,.fabric-grid{gap:28px!important}
+.service-card,.product-card,.contact-box{
+ background:linear-gradient(145deg,#171717,#0d0d0d)!important;
+ border:1px solid rgba(201,162,39,.20)!important;
+ border-radius:3px!important;
+ box-shadow:0 20px 55px rgba(0,0,0,.28)!important;
+ transition:transform .35s,box-shadow .35s,border-color .35s!important;
+}
+.service-card:hover,.product-card:hover,.contact-box:hover{
+ transform:translateY(-8px);border-color:rgba(240,215,123,.65)!important;
+ box-shadow:0 25px 70px rgba(201,162,39,.12)!important;
+}
+.service-icon{filter:grayscale(.2);font-size:34px!important}
+.product-card img{filter:saturate(.82);transition:.5s!important}
+.product-card:hover img{transform:scale(1.05);filter:saturate(1.05)}
+.fabric-section{background:#0e0e0e!important}
+.fabric-card{border:1px solid rgba(201,162,39,.2);box-shadow:0 18px 45px #000}
+.about{background:var(--lux-cream)!important;color:#171717!important}
+.about-content h2{color:#111!important;font-size:46px!important}
+.about-content p{color:#444!important}
+.features span{color:#a77b14!important}
+.contact-box h3{color:var(--lux-gold2)}
+form input,form textarea{
+ background:#111!important;color:#fff!important;border:1px solid #333!important;border-radius:2px!important
+}
+form input:focus,form textarea:focus{border-color:var(--lux-gold)!important;box-shadow:0 0 0 3px rgba(201,162,39,.08)}
+footer{background:#050505!important;border-top:1px solid rgba(201,162,39,.25)}
+.whatsapp{box-shadow:0 0 0 5px rgba(37,211,102,.08),0 12px 35px rgba(0,0,0,.5)!important}
+@media(max-width:600px){
+ .hero{min-height:650px!important}
+ .hero-content h1{font-size:48px!important}
+ .hero:after{margin:10px}
+ .section-title h2,.about-content h2{font-size:34px!important}
+}
+
+</style>
 </head>
 
 
@@ -675,6 +767,12 @@
 
 </section>
 
+<div style="background:#171717;color:#fff;padding:22px 7%;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;border-top:1px solid rgba(212,175,55,.25);border-bottom:1px solid rgba(212,175,55,.25);">
+  <div><b style="color:#d4af37;font-size:20px;">01</b><br><small>Premium Fabrics</small></div>
+  <div><b style="color:#d4af37;font-size:20px;">02</b><br><small>Expert Stitching</small></div>
+  <div><b style="color:#d4af37;font-size:20px;">03</b><br><small>Modern Men's Wear</small></div>
+  <div><b style="color:#d4af37;font-size:20px;">04</b><br><small>Personal Service</small></div>
+</div>
 
 <!-- ================= SERVICES ================= -->
 
